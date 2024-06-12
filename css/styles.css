@@ -9,7 +9,7 @@ body{
     font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-style: normal;
-    background-color: #430b91e3;
+    background-color: #5a0d80dc;
     color: #fff;
 }
 
@@ -70,7 +70,7 @@ body .Title{
     align-items: center;
 }
 
-.container .search-container{
+.search-container{
     max-width: 1000px;
     padding: 30px;
     background: #efefef;
@@ -86,23 +86,23 @@ body .Title{
     display: flex;
 }
 
-.container .search-container .main-subinfo{
+.search-container .main-subinfo{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-right: 5px;
 }
 
-.container .search-container .main-subinfo img{
+.search-container .main-subinfo img{
     width: 250px;
 }
 
-.container .search-container .main-subinfo .info{
+.search-container .main-subinfo .info{
     display: flex;
     flex-direction: column;
 }
 
-.container .search-container .main-subinfo h1{
+.search-container .main-subinfo h1{
     width: 100%;
     font-size: 20px;
     border-bottom: 2px solid #aeaeae;
@@ -110,12 +110,12 @@ body .Title{
     padding: 0 0 2px 5px;
 }
 
-.container .search-container .main-info{
+.search-container .main-info{
     margin-left: 5px;
     border-left: 2px solid #aeaeae;
 }
 
-.container .search-container .main-info .first-info{
+.search-container .main-info .first-info{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -126,7 +126,7 @@ body .Title{
     margin-top: 10px;
 }
 
-.container .search-container .main-info .first-info .info{
+.search-container .main-info .first-info .info{
     display: flex;
     align-items: center;
     flex-wrap: wrap;
@@ -135,37 +135,37 @@ body .Title{
     border-left: 2px solid #aeaeae;
 }
 
-.container .search-container .main-info .first-info .info span{
+.search-container .main-info .first-info .info span{
     margin: 2px 5px;
 }
 
-.container .search-container .main-info h1{
+.search-container .main-info h1{
     font-size: 40px;
     margin-left: 5px;
 }
 
-.container .search-container .main-info .synopsis{
+.search-container .main-info .synopsis{
     margin-top: 20px;
 }
 
-.container .search-container .main-info .synopsis h1{
+.search-container .main-info .synopsis h1{
     font-size: 20px;
     padding: 2px;
     margin-bottom: 10px;
     border-bottom: #aeaeae solid 2px;
 }
 
-.container .search-container .main-info .synopsis p{
+.search-container .main-info .synopsis p{
     padding: 10px;
 }
 
-.container .search-container span{
+.search-container span{
     color: #000000;
     font-size: 15px;
     margin: 3px;
 }
 
-.container .search-container label{
+.search-container label{
     color: #0000003a;
     font-size: 16px;
 }
