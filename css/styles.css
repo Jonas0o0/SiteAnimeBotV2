@@ -9,7 +9,167 @@ body{
     font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-style: normal;
+    background-color: #430b91e3;
+    color: #fff;
 }
+
+body .Title{
+    font-size: 50px;
+    text-align: center;
+    font-weight: 900;
+}
+
+.search {
+    display: flex;
+    background: #6a89cc;
+    width: 500px;
+    height: 40px;
+    padding: 0.2rem 0.6rem 0.2rem 0.2rem;  
+    box-sizing: border-box;
+    box-shadow: 1px 1px 0 0 #4a69bd,
+                2px 2px 0 0 #4a69bd,
+                3px 3px 0 0 #4a69bd,
+                4px 4px 0 0 #4a69bd,
+                5px 5px 0 0 #4a69bd,
+                6px 6px 0 0 #4a69bd;
+    margin: 50px;
+}
+
+.search input[type="text"] {
+    border: 0;
+    outline: none;
+    height: 100%;
+    width: 85%;
+    padding: 0 1rem;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+.search input[type="submit"] {
+    margin-left: auto;
+    background: none;
+    border: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0;
+    outline: none;
+}
+
+.anime-search{
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container .search-container{
+    max-width: 1000px;
+    padding: 30px;
+    background: #efefef;
+    color: #000;
+    border: solid 5px #6a89cc;
+    box-shadow: 5px 5px 0 0 #4a69bd,
+                10px 10px 0 0 #4a69bd,
+                15px 15px 0 0 #4a69bd,
+                20px 20px 0 0 #4a69bd,
+                25px 25px 0 0 #4a69bd,
+                30px 30px 0 0 #4a69bd;
+    margin: 50px;
+    display: flex;
+}
+
+.container .search-container .main-subinfo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 5px;
+}
+
+.container .search-container .main-subinfo img{
+    width: 250px;
+}
+
+.container .search-container .main-subinfo .info{
+    display: flex;
+    flex-direction: column;
+}
+
+.container .search-container .main-subinfo h1{
+    width: 100%;
+    font-size: 20px;
+    border-bottom: 2px solid #aeaeae;
+    margin-top: 10px;
+    padding: 0 0 2px 5px;
+}
+
+.container .search-container .main-info{
+    margin-left: 5px;
+    border-left: 2px solid #aeaeae;
+}
+
+.container .search-container .main-info .first-info{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #aeaeae;
+    border-radius: 5px 15px 15px 5px;
+    padding: 10px;
+    margin-left: -2px;
+    margin-top: 10px;
+}
+
+.container .search-container .main-info .first-info .info{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 5px;
+    padding-left: 5px;
+    border-left: 2px solid #aeaeae;
+}
+
+.container .search-container .main-info .first-info .info span{
+    margin: 2px 5px;
+}
+
+.container .search-container .main-info h1{
+    font-size: 40px;
+    margin-left: 5px;
+}
+
+.container .search-container .main-info .synopsis{
+    margin-top: 20px;
+}
+
+.container .search-container .main-info .synopsis h1{
+    font-size: 20px;
+    padding: 2px;
+    margin-bottom: 10px;
+    border-bottom: #aeaeae solid 2px;
+}
+
+.container .search-container .main-info .synopsis p{
+    padding: 10px;
+}
+
+.container .search-container span{
+    color: #000000;
+    font-size: 15px;
+    margin: 3px;
+}
+
+.container .search-container label{
+    color: #0000003a;
+    font-size: 16px;
+}
+
 
 .anime-rank{
     display: flex;
@@ -22,7 +182,7 @@ body{
 .anime-container{
     display: flex;
     flex-wrap: wrap;
-    padding: 10px;
+    margin: 10px;
     max-width: 1080px;
 }
 
@@ -94,7 +254,7 @@ body{
 
 .anime:hover{
     box-shadow: rgba(0, 0, 0, 0.35) 0px -100px 36px -28px inset;
-    border-radius: 0 0 15px 15px;
+    border-radius: 0 15px 15px 15px;
 }
 
 .anime:hover .title{
