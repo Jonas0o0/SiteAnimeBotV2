@@ -1,3 +1,43 @@
+let url_advice = "https://api.jikan.moe/v4/anime/1/recommendations";
+  const Advrequest = new Request(url_advice, {
+    method: "GET"
+  });
+  fetch(Advrequest)
+  .then((response) => {
+    if (response.status === 200) {
+        return response.json();
+    } else {
+      throw new Error("Something went wrong on api server!");
+    }
+  })
+  .then(function(data) {
+    Anime(data['data'][0]['entry']['mal_id']);
+  });
+
+function Anime(id){
+  let url = "https://api.jikan.moe/v4/anime/"+id;
+  let dataA = {}
+  const Arequest = new Request(url, {
+    method: "GET"
+  });
+  fetch(Arequest)
+  .then((response) => {
+    if (response.status === 200) {
+        return response.json();
+    } else {
+      throw new Error("Something went wrong on api server!");
+    }
+  })
+  .then(function(data) {
+    dataA = data.data;
+    build(AnimeInfo(dataA), "Recomandation")
+  })
+  .catch((error) => {
+    console.error(error);
+  });
+};
+
+
 const form = document.getElementById("form");
 const search = document.getElementById("search");
 
@@ -20,7 +60,7 @@ function SearchAnimeByName(name){
     }
   })
   .then(function(data) {
-    build(AnimeInfo(data['data'][0]));
+    build(AnimeInfo(data['data'][0]), "Search");
   })
   .catch((error) => {
     console.error(error);
@@ -28,44 +68,46 @@ function SearchAnimeByName(name){
 
 };
 
-function build(data){
-  let image = document.getElementsByClassName("ImgSearch")[0];
+function build(data, Scr){
+  console.log(data)
+  console.log(Scr)
+  let image = document.getElementsByClassName("Img"+Scr)[0];
   image.setAttribute("src", data.img);
-  let genre = document.getElementsByClassName("GenreSearch")[0];
+  let genre = document.getElementsByClassName("Genre"+Scr)[0];
   genre.innerHTML = data.genres;
-  let theme = document.getElementsByClassName("ThemeSearch")[0];
+  let theme = document.getElementsByClassName("Theme"+Scr)[0];
   theme.innerHTML = data.theme;
-  let demographics = document.getElementsByClassName("DemographicsSearch")[0];
+  let demographics = document.getElementsByClassName("Demographics"+Scr)[0];
   demographics.innerHTML = data.demographics;
-  let duration = document.getElementsByClassName("DurationsSearch")[0];
+  let duration = document.getElementsByClassName("Durations"+Scr)[0];
   duration.innerHTML = data.duration;
 
-  let tittle = document.getElementsByClassName("TitleSearch")[0];
+  let tittle = document.getElementsByClassName("Title"+Scr)[0];
   tittle.innerHTML = data.title;
 
-  let score = document.getElementsByClassName("ScoreSearch")[0];
+  let score = document.getElementsByClassName("Score"+Scr)[0];
   score.innerHTML = data.score;
-  let rank = document.getElementsByClassName("RankSearch")[0];
+  let rank = document.getElementsByClassName("Rank"+Scr)[0];
   rank.innerHTML = data.rank;
-  let popularity = document.getElementsByClassName("PopularitySearch")[0];
+  let popularity = document.getElementsByClassName("Popularity"+Scr)[0];
   popularity.innerHTML = data.popularity;
-  let member = document.getElementsByClassName("MembersSearch")[0];
+  let member = document.getElementsByClassName("Members"+Scr)[0];
   member.innerHTML = data.membre;
-  let date = document.getElementsByClassName("DateSearch")[0];
+  let date = document.getElementsByClassName("Date"+Scr)[0];
   date.innerHTML = data.date;
-  let type = document.getElementsByClassName("TypeSearch")[0];
+  let type = document.getElementsByClassName("Type"+Scr)[0];
   type.innerHTML = data.type
-  let status = document.getElementsByClassName("StatusSearch")[0];
+  let status = document.getElementsByClassName("Status"+Scr)[0];
   status.innerHTML = data.status;
 
-  let synopsis = document.getElementsByClassName("SynopsisSearch")[0];
+  let synopsis = document.getElementsByClassName("Synopsis"+Scr)[0];
   synopsis.innerHTML = data.synopsis;
 
-  let produceurs = document.getElementsByClassName("ProduceursSearch")[0];
+  let produceurs = document.getElementsByClassName("Produceurs"+Scr)[0];
   produceurs.innerHTML = data.producers;
-  let studios = document.getElementsByClassName("StudiosSearch")[0];
+  let studios = document.getElementsByClassName("Studios"+Scr)[0];
   studios.innerHTML = data.studios
-  let licensors = document.getElementsByClassName("LicensorsSearch")[0];
+  let licensors = document.getElementsByClassName("Licensors"+Scr)[0];
   licensors.innerHTML = data.licensors;
 }
 
